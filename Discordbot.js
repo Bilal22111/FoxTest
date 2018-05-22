@@ -453,7 +453,7 @@ client.on('ready',  () => {
 
 
 client.on('ready', () => {
-     client.user.setActivity("!Help",{type: 'WATCHING'});
+     client.user.setActivity("#help",{type: 'WATCHING'});
 
 });
 
