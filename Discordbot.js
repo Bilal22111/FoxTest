@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-var prefix = "!"
+var prefix = "#"
 var moment = require("moment");
 const figlet = require('figlet');
 
@@ -225,7 +225,7 @@ return;
           var bc = new Discord.RichEmbed()
           .setAuthor(message.author.username, message.author.avatarURL)
           .addField(' الـسيرفر', `${message.guild.name}`,true)
-          .addField(' الـمرسل ', `${message.author.username}#${message.author.discriminator}`,true)
+          .addField(' الـمرسل ', `${message.author.username}!${message.author.discriminator}`,true)
           .addField(' الرسالة ', args)
           .setThumbnail(message.guild.iconURL)
           .setColor('RANDOM')
@@ -513,8 +513,8 @@ client.on("message", message => {
     .setColor(0x00AE86)
     .setTimestamp()
     .addField('الأستعمال:', 'اسكت/احكي')
-    .addField('تم ميوت:', `${user.username}#${user.discriminator} (${user.id})`)
-    .addField('بواسطة:', `${message.author.username}#${message.author.discriminator}`)
+    .addField('تم ميوت:', `${user.username}!${user.discriminator} (${user.id})`)
+    .addField('بواسطة:', `${message.author.username}!${message.author.discriminator}`)
 
    if (!message.guild.member(client.user).hasPermission('MANAGE_ROLES_OR_PERMISSIONS')) return message.reply('** لا يوجد لدي برمشن Manage Roles **').catch(console.error);
 
@@ -637,8 +637,8 @@ client.on("message", message => {
     .setColor(0x00AE86)
     .setTimestamp()
     .addField('الأستعمال:', 'اسكت/احكي')
-    .addField('تم فك الميوت عن:', `${user.username}#${user.discriminator} (${user.id})`)
-    .addField('بواسطة:', `${message.author.username}#${message.author.discriminator}`)
+    .addField('تم فك الميوت عن:', `${user.username}!${user.discriminator} (${user.id})`)
+    .addField('بواسطة:', `${message.author.username}!${message.author.discriminator}`)
 
   if (!message.guild.member(client.user).hasPermission('MANAGE_ROLES_OR_PERMISSIONS')) return message.reply('** لا يوجد لدي برمشن Manage Roles **').catch(console.error);
 
@@ -682,30 +682,30 @@ return message.reply("**:white_check_mark: .. تم فك الميوت عن الش
 client.on("message", message => {
   if (message.content === "!help") {
    const embed = new Discord.RichEmbed()
-       .setColor("#ffff00")
+       .setColor("!ffff00")
        .setFooter('By ♪ ℬℐℓѦℓ✋')
        .setThumbnail(message.author.avatarURL)
        .setDescription(`
 
    **✨Administrationr Commands | اوامر الاداره✨**
- !ban    | لحظر لاعب
- !kick   | لإخراج لاعب من السيرفر
- !mute   |  لإسكات لاعب
- !unmute | لإلغاء الاإسكات عن لاعب
- !bc     | لإرسال رسالة لمستخدمي البوت
- !clear  | لمسح اشات
+ #ban    | لحظر لاعب
+ #kick   | لإخراج لاعب من السيرفر
+ #mute   |  لإسكات لاعب
+ #unmute | لإلغاء الاإسكات عن لاعب
+ #bc     | لإرسال رسالة لمستخدمي البوت
+ #clear  | لمسح اشات
  **✨Common Commands | الاوامر العامة ✨**
- !help   | لإظهار هذه الرسالة
- !invite | لإضافة البوت
- !report |للتبليغ عن اي احد يقوم بالإزعاج
- !id     | لإظهار معلومات حسابك العامة
- !bot    | لإظهار معلومات البوت
- !tag    |  لكتابة الكلام بطريقة مميزة
+ #help   | لإظهار هذه الرسالة
+ #invite | لإضافة البوت
+ #report |للتبليغ عن اي احد يقوم بالإزعاج
+ #id     | لإظهار معلومات حسابك العامة
+ #bot    | لإظهار معلومات البوت
+ #tag    |  لكتابة الكلام بطريقة مميزة
  **✨Games Commands  | اوامر الالعاب✨**
- !فكك    
- !اسالني
- !ايموجي
- !عقاب
+ #فكك    
+ #اسالني
+ #ايموجي
+ #عقاب
   Soon More Will be added
  `)
  message.author.send(embed);
@@ -875,7 +875,7 @@ var mentionned = message.mentions.members.first();
  }
 moment.locale('ar-TN');
       var id = new  Discord.RichEmbed()
-    .setColor("#0a0909")
+    .setColor("!0a0909")
     .setAuthor(message.author.username, message.author.avatarURL) 
 .addField(': دخولك لديسكورد قبل', `${moment(heg.createdTimestamp).format('YYYY/M/D HH:mm:ss')} **\n** \`${moment(heg.createdTimestamp).fromNow()}\`` ,true) 
 .addField(': انضمامك لسيرفر قبل', `${moment(h.joinedAt).format('YYYY/M/D HH:mm:ss')} \n \`${moment(h.joinedAt).fromNow()}\``, true)
