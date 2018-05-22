@@ -465,27 +465,7 @@ client.on('ready', () => {
 
 
 
-client.on('guildMemberAdd', member => {
-  let channel = member.guild.channels.find('name', 'chat');
-  let memberavatar = member.user.avatarURL
-    if (!channel) return; 
-  let embed = new Discord.RichEmbed()
-      .setColor('RANDOM')
-      .setThumbnail(memberavatar)
-      .addField('🎽 | name :  ',`${member}`)
-      .addField('📢 | سيرفر ي قلبي:' , `Welcome to the server, ${member}`)
-      .addField('🆔 | user :', "**[" + `${member.id}` + "]**" )
-              .addField('➡| انت العضو رقم',`${member.guild.memberCount}`)
-             
-                .addField("Name:",`<@` + `${member.id}` + `>`, true)
-                    
-                                   .addField('Welcome To Server', `${member.guild.name}`,true)
-                                     
-   .setFooter("Diamond Team")
-      .setTimestamp()
-  
-    channel.sendEmbed(embed);
-  });
+
 
 
 
@@ -713,12 +693,14 @@ client.on("message", message => {
  !mute   |  لإسكات لاعب
  !unmute | لإلغاء الاإسكات عن لاعب
  !bc     | لإرسال رسالة لمستخدمي البوت
+ !clear  | لمسح اشات
  **✨Common Commands | الاوامر العامة ✨**
  !help   | لإظهار هذه الرسالة
  !invite | لإضافة البوت
  !report |للتبليغ عن اي احد يقوم بالإزعاج
  !id     | لإظهار معلومات حسابك العامة
  !bot    | لإظهار معلومات البوت
+ !tag    |  لكتابة الكلام بطريقة مميزة
  **✨Games Commands  | اوامر الالعاب✨**
  !فكك    
  !اسالني
@@ -976,7 +958,7 @@ client.on('message', message => {
   if(message.content === '!invite') {
   const embed = new Discord.RichEmbed()
   .setTitle(':arrow_right: add diamondbot')
-  .setURL('https://discordapp.com/oauth2/authorize?client_id=441584860524445721&scope=bot&permissions=8')
+  .setURL('https://discordapp.com/oauth2/authorize?client_id=447751707003453460&scope=bot&permissions=8')
   .setColor('RANDOM')
   message.author.send(embed);
   }
