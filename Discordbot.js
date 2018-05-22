@@ -957,7 +957,7 @@ client.on('message', message => {
 client.on('message', message => {
   if(message.content === '!invite') {
   const embed = new Discord.RichEmbed()
-  .setTitle(':arrow_right: add diamondbot')
+  .setTitle(':arrow_right: add FoxBot')
   .setURL('https://discordapp.com/oauth2/authorize?client_id=447751707003453460&scope=bot&permissions=8')
   .setColor('RANDOM')
   message.author.send(embed);
