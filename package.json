@@ -9,6 +9,7 @@
     },
     "discord.js": "^11.3.2",
     "figlet": "^1.2.0",
+    "fortnite": "^4.1.1",
     "fs": "0.0.1-security",
     "long": {
       "integrity": "sha512-XsP+KhQif4bjX1kbuSiySJFNAehNxgLb6hPRGJ9QsUr8ajHkuXGdrHmFUTUUXhDwVX2R5bY4JNZEwbUiMhV+MA==",
