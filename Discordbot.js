@@ -682,7 +682,7 @@ return message.reply("**:white_check_mark: .. تم فك الميوت عن الش
 client.on("message", message => {
   if (message.content === "#help") {
    const embed = new Discord.RichEmbed()
-       .setColor("!ffff00")
+       .setColor('RANDOM')
        .setFooter('By ♪ ℬℐℓѦℓ✋')
        .setThumbnail(message.author.avatarURL)
        .setDescription(`
