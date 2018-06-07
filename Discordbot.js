@@ -694,12 +694,6 @@ const fs = require('fs');
 
 
 
-client.on ("guildMemberAdd", member => {
-  
-  var role = member.guild.roles.find ("name", "▪ Coder");
-  member.addRole (role);
- 
-});
 
 
 
