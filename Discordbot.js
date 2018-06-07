@@ -70,7 +70,67 @@ client.on('message', msg => {
 
 
 
+client.on('message', msg => {
+  if(msg.content.startsWith('!suggest')) {
+    if(!msg.channel.guild) return msg.reply('** هاذا الامر فقط للسيرفرات**');
+    if(!msg.guild.channels.find('name', 'suggestions')) return msg.reply('Add Suggestions room');
+    let args = msg.content.split(" ").slice(1);
+    if(!args[1]) return msg.reply('الرجاء كتابة الاقتراح')
+    if(msg.guild.channels.find('name', 'suggestions')) {
+      msg.guild.channels.find('name', 'suggestions').send(`
+      تم الاقتراح من قبل : ${msg.member}
 
+      الاقتراح : 
+      ${args.join(" ").split(msg.mentions.members.first()).slice(' ')}
+      `)
+      .then(function (message) {
+        message.react('✅')
+        message.react('❌')
+      })
+      }
+    }
+
+});
+
+
+
+
+
+client.on("message", message => {
+  if (message.content === "#avatar") {
+   const embed = new Discord.RichEmbed()
+       .setColor('RANDOM')
+       .setFooter('By ♪ ℬℐℓѦℓ✋')
+       .setThumbnail(message.author.avatarURL)
+       .addField(message.author.displayAvatarURL)
+ message.channel.send(embed);
+}
+});
+
+
+
+
+
+
+
+client.on('guildMemberAdd', member => {
+  if (!member || !member.id || !member.guild) return;
+  const guild = member.guild;
+
+  const channel = member.guild.channels.find('name', 'welcome-goodbye');
+  if (!channel) return;
+  let memberavatar = member.user.avatarURL
+  const fromNow = moment(member.user.createdTimestamp).fromNow();
+  const isNew = (new Date() - member.user.createdTimestamp) < 900000 ? '🆕' : '';
+  
+  let embed = new Discord.RichEmbed()
+     .setAuthor(`${member.user.tag}`, member.user.avatarURL)
+   .setThumbnail(memberavatar)
+     .setColor('GREEN')
+     .setDescription(`📥 <@${member.user.id}> **Joined To The Server**\n\n`)
+     .setTimestamp();
+   channel.send({embed:embed});
+});
 
 
 
@@ -410,8 +470,20 @@ client.on('message', message => {
 
 
 
-
-
+const Slam = [
+  'هلا بيك',
+  'منور يا ولد',
+  'بنورك نفرح',
+  'يا هلا ',
+]
+client.on('message', msg => {
+  if(message.content === 'هلا') {
+    const slamat = new Discord.RichEmbed()
+    .setDescription(`${Slam[Math.floor(Math.random() * Slam.length)]}`)
+    .setThumbnail(message.author.avatarURL)
+    msg.channel.send(Embed)
+  }
+})
 
 
 
@@ -621,6 +693,13 @@ const fs = require('fs');
 
 
 
+
+client.on ("guildMemberAdd", member => {
+  
+  var role = member.guild.roles.find ("name", "▪ Coder");
+  member.addRole (role);
+ 
+});
 
 
 
