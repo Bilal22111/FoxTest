@@ -71,7 +71,7 @@ client.on('message', msg => {
 
 
 client.on('message', msg => {
-  if(msg.content.startsWith('!suggest')) {
+  if(msg.content.startsWith('#suggest')) {
     if(!msg.channel.guild) return msg.reply('** هاذا الامر فقط للسيرفرات**');
     if(!msg.guild.channels.find('name', 'suggestions')) return msg.reply('Add Suggestions room');
     let args = msg.content.split(" ").slice(1);
@@ -96,16 +96,6 @@ client.on('message', msg => {
 
 
 
-client.on("message", message => {
-  if (message.content === "#avatar") {
-   const embed = new Discord.RichEmbed()
-       .setColor('RANDOM')
-       .setFooter('By ♪ ℬℐℓѦℓ✋')
-       .setThumbnail(message.author.avatarURL)
-       .addField(message.author.displayAvatarURL)
- message.channel.send(embed);
-}
-});
 
 
 
@@ -113,24 +103,6 @@ client.on("message", message => {
 
 
 
-client.on('guildMemberAdd', member => {
-  if (!member || !member.id || !member.guild) return;
-  const guild = member.guild;
-
-  const channel = member.guild.channels.find('name', 'welcome-goodbye');
-  if (!channel) return;
-  let memberavatar = member.user.avatarURL
-  const fromNow = moment(member.user.createdTimestamp).fromNow();
-  const isNew = (new Date() - member.user.createdTimestamp) < 900000 ? '🆕' : '';
-  
-  let embed = new Discord.RichEmbed()
-     .setAuthor(`${member.user.tag}`, member.user.avatarURL)
-   .setThumbnail(memberavatar)
-     .setColor('GREEN')
-     .setDescription(`📥 <@${member.user.id}> **Joined To The Server**\n\n`)
-     .setTimestamp();
-   channel.send({embed:embed});
-});
 
 
 
