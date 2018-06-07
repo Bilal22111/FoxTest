@@ -442,20 +442,41 @@ client.on('message', message => {
 
 
 
-const Slam = [
-  'هلا بيك',
-  'منور يا ولد',
-  'بنورك نفرح',
-  'يا هلا ',
-]
-client.on('message', msg => {
-  if(message.content === 'هلا') {
-    const slamat = new Discord.RichEmbed()
-    .setDescription(`${Slam[Math.floor(Math.random() * Slam.length)]}`)
-    .setThumbnail(message.author.avatarURL)
-    msg.channel.send(Embed)
-  }
-})
+client.on("message", message => {
+  if (message.content === "#avatar") {
+   const embed = new Discord.RichEmbed()
+       .setColor('RANDOM')
+       .setFooter('By ♪ ℬℐℓѦℓ✋')
+       .setThumbnail(message.author.avatarURL)
+       .addField(message.author.displayAvatarURL)
+ message.channel.send(embed);
+}
+});
+
+
+
+
+
+
+
+client.on('guildMemberAdd', member => {
+  if (!member || !member.id || !member.guild) return;
+  const guild = member.guild;
+
+  const channel = member.guild.channels.find('name', 'welcome-goodbye');
+  if (!channel) return;
+  let memberavatar = member.user.avatarURL
+  const fromNow = moment(member.user.createdTimestamp).fromNow();
+  const isNew = (new Date() - member.user.createdTimestamp) < 900000 ? '🆕' : '';
+  
+  let embed = new Discord.RichEmbed()
+     .setAuthor(`${member.user.tag}`, member.user.avatarURL)
+   .setThumbnail(memberavatar)
+     .setColor('GREEN')
+     .setDescription(`📥 <@${member.user.id}> **Joined To The Server**\n\n`)
+     .setTimestamp();
+   channel.send({embed:embed});
+});
 
 
 
@@ -753,6 +774,7 @@ client.on("message", message => {
  #bc     | لإرسال رسالة لمستخدمي البوت
  #clear  | لمسح اشات
  **✨Common Commands | الاوامر العامة ✨**
+ #avatar | لإظهار الصورة الخاصة بك و رابطها
  #help   | لإظهار هذه الرسالة
  #invite | لإضافة البوت
  #report |للتبليغ عن اي احد يقوم بالإزعاج
@@ -784,7 +806,11 @@ client.on("message", message => {
 
 
 
-
+client.on ("guildMemberAdd", member => {
+  
+  var role = member.guild.roles.find ("name", "▪ Coder");
+  member.addRole (role);
+});
 
 
 
