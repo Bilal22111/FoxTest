@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-var prefix = "#"
+var prefix = "F!"
 var moment = require("moment");
 const figlet = require('figlet');
 
@@ -11,45 +11,13 @@ client.on('ready', () => {
 
 
 
-
-
-
-
-
 client.on('message', msg => {
-  if (msg.content === 'ت ف ك ي ك') {
-    msg.reply('احسنت');
-  }
-});
+  //Code By : ‡ ♪ ℬℐℓѦℓ✋ ‡#2026
+  
 
 
 
 
-
-
-
-
-client.on('message', msg => {
-  if (msg.content === 'ل ع ب ة') {
-    msg.reply('احسنت');
-  }
-});
-
-
-
-
-client.on('message', msg => {
-  if (msg.content === 'ك ل م ة') {
-    msg.reply('احسنت');
-  }
-});
-
-
-client.on('message', msg => {
-  if (msg.content === 'د ي س ك و ر د') {
-    msg.reply('احسنت');
-  }
-});
 
 
 
@@ -71,7 +39,7 @@ client.on('message', msg => {
 
 
 client.on('message', msg => {
-  if(msg.content.startsWith('#suggest')) {
+  if(msg.content.startsWith('F!suggest')) {
     if(!msg.channel.guild) return msg.reply('** هاذا الامر فقط للسيرفرات**');
     if(!msg.guild.channels.find('name', 'suggestions')) return msg.reply('Add Suggestions room');
     let args = msg.content.split(" ").slice(1);
@@ -140,7 +108,7 @@ if(!args[0]) return message.reply('مرجو كتابة نص الدي تريد');
 
 
 client.on('message', message => {
-    if (message.content.startsWith("#bot")) {
+    if (message.content.startsWith("F!bot")) {
       message.channel.send({
  embed: new Discord.RichEmbed() 
     .setColor('RED')
@@ -216,7 +184,7 @@ client.on('message', message => {
 
 
     client.on('message', msg => { 
-      if (msg.content.startsWith(`#report`)) {
+      if (msg.content.startsWith(`F!report`)) {
       // تعريف الارجس
          let args = msg.content.split(" ").slice(1);
       // لو ما منشن احد يرد عيله
@@ -303,7 +271,7 @@ return;
 
 
 client.on("message", message => {
-  var prefix = "#";
+  var prefix = "F!";
 
           var args = message.content.substring(prefix.length).split(" ");
           if (message.content.startsWith(prefix + "clear")) {
@@ -344,7 +312,7 @@ client.on("message", message => {
 
 
 client.on('message', message => {
-  let prefix = "#"
+  let prefix = "F!"
   if (message.author.x5bz) return;
   if (!message.content.startsWith(prefix)) return;
  console.log(`Diamond team`);
@@ -397,7 +365,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-  let prefix = "#"
+  let prefix = "F!"
   if (message.author.x5bz) return;
   if (!message.content.startsWith(prefix)) return;
       console.log(`Diamond Team`);
@@ -443,7 +411,7 @@ client.on('message', message => {
 
 
 client.on("message", message => {
-  if (message.content === "#avatar") {
+  if (message.content === "F!avatar") {
    const embed = new Discord.RichEmbed()
        .setColor('RANDOM')
        .setFooter('By ♪ ℬℐℓѦℓ✋')
@@ -515,7 +483,7 @@ if (message.content.startsWith('#فكك')) {
 
 
 client.on('ready',  () => {
-  console.log('تم تشغيل: DiamondBot  ');
+  console.log('تم تشغيل: FoxBot  ');
   console.log(`Logged in as * [ " ${client.user.username} " ] servers! [ " ${client.guilds.size} " ]`);
   console.log(`Logged in as * [ " ${client.user.username} " ] Users! [ " ${client.users.size} " ]`);
   console.log(`Logged in as * [ " ${client.user.username} " ] channels! [ " ${client.channels.size} " ]`);
@@ -579,7 +547,7 @@ client.on("message", message => {
 
   let command = message.content.split(" ")[0];
 
-  if (command === "#mute") {
+  if (command === "F!mute") {
         if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply("** لا يوجد لديك برمشن 'Manage Roles' **").catch(console.error);
   let user = message.mentions.users.first();
   let modlog = client.channels.find('name', 'mod-log');
@@ -651,7 +619,7 @@ const fs = require('fs');
         if (!points[message.author.id]) points[message.author.id] = { 
             points: 0,
           };
-        const prefix = "#" 
+        const prefix = "F!" 
         if (message.content.startsWith(prefix + 'ايموجي')) { 
             if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
         
@@ -705,7 +673,7 @@ client.on("message", message => {
 
   let command = message.content.split(" ")[0];
 
-  if (command === "#unmute") {
+  if (command === "F!unmute") {
         if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply("** لا يوجد لديك برمشن 'Manage Roles' **").catch(console.error);
   let user = message.mentions.users.first();
   let modlog = client.channels.find('name', 'mod-log');
@@ -759,7 +727,7 @@ return message.reply("**:white_check_mark: .. تم فك الميوت عن الش
 
 
 client.on("message", message => {
-  if (message.content === "#help") {
+  if (message.content === "F!help") {
    const embed = new Discord.RichEmbed()
        .setColor('RANDOM')
        .setFooter('By ♪ ℬℐℓѦℓ✋')
@@ -767,25 +735,25 @@ client.on("message", message => {
        .setDescription(`
 
    **✨Administrationr Commands | اوامر الاداره✨**
- #ban    | لحظر لاعب
- #kick   | لإخراج لاعب من السيرفر
- #mute   |  لإسكات لاعب
- #unmute | لإلغاء الاإسكات عن لاعب
- #bc     | لإرسال رسالة لمستخدمي البوت
- #clear  | لمسح اشات
+ F!ban    | لحظر لاعب
+ F!kick   | لإخراج لاعب من السيرفر
+ F!mute   |  لإسكات لاعب
+ F!unmute | لإلغاء الاإسكات عن لاعب
+ F!bc     | لإرسال رسالة لمستخدمي البوت
+ F!clear  | لمسح اشات
  **✨Common Commands | الاوامر العامة ✨**
- #avatar | لإظهار الصورة الخاصة بك و رابطها
- #help   | لإظهار هذه الرسالة
- #invite | لإضافة البوت
- #report |للتبليغ عن اي احد يقوم بالإزعاج
- #id     | لإظهار معلومات حسابك العامة
- #bot    | لإظهار معلومات البوت
- #tag    |  لكتابة الكلام بطريقة مميزة
+ F!avatar | لإظهار الصورة الخاصة بك و رابطها
+ F!help   | لإظهار هذه الرسالة
+ F!invite | لإضافة البوت
+ F!report |للتبليغ عن اي احد يقوم بالإزعاج
+ F!id     | لإظهار معلومات حسابك العامة
+ F!bot    | لإظهار معلومات البوت
+ F!tag    |  لكتابة الكلام بطريقة مميزة
  **✨Games Commands  | اوامر الالعاب✨**
- #فكك    
- #اسالني
- #ايموجي
- #عقاب
+ F!فكك
+ F!اسالني
+ F!ايموجي
+ F!عقاب
   Soon More Will be added
  `)
  message.author.send(embed);
@@ -855,7 +823,7 @@ client.on ("guildMemberAdd", member => {
 
 
 client.on('message', message => {
-  if (message.content == "#اسالني") {
+  if (message.content == "F!اسالني") {
        message.react('🤔','👌')
       var x = ['اين يلعب مصطفي فتحي؟', 'ما هو اسم ملعب بارشالونة', 'ما هو يوم الحج الأكبر؟', 'ما هو أطول أنهار أوربا ؟', 'ما هو اسم بيت الدجاج', 'ما هو أول بنك قام بالنشاط المصرفي في السعودية عام 1926م' , 'ما هو أول جامع أقيم في مصر','ما هو أطول نهر في آسيا','ما هو أقرب كوكب إلى الشمس','ما هو الحيوان الذي يُسمى البهنس','ما هو اول مسجد أسس بالمدينة','متى وقع صلح الحديبية عام 6هـ او 3هـ او 2هـ؟','متى قامت أمريكا بأول رحلة فضائية','متى كانت غزوة خيبر؟','ما هي السورة التي تبدأ بقوله تعالى " يا أيها النبي اتق الله ولا تطع الكافرين والمنافقين إن الله كان عليما حكيما ".اجب؟','ما هي السورة التي يطلق عليها عروس القرآن','ماذا يسمى من لايقرأ ولايكتب','ماهي أول دولة استخدمت طابع البريد','ماهو شعار الولايات المتحدة الامريكية','ماهو اذكي الحيوانات','من هو مكتشف أمريكا','مامعنى "فرعون" اجب؟','ماهو اقرب كوكب إلى الارض','ما هي نسبه المياه من الكره الارضيه?','كم عدد السجدات في القرآن الكريم؟','من هو بطل كاس العالم في عام 1966','أين أفتتح اول متحف في العالم?','ماأسم أنثى الحمار?','كم تبلغ درجه حراره الشمس؟','من هي مدينة الضباب','أين توجد أطول سكة حديد في العالم?'
       ];
@@ -900,7 +868,7 @@ client.on('message', message => {
 client.on('message', message => {
   if(!message.channel.guild) return;
 let args = message.content.split(' ').slice(1).join(' ');
-if (message.content.startsWith('#bc-users')){
+if (message.content.startsWith('F!bc-users')){
 message.channel.sendMessage('جار ارسال الرسالة |:white_check_mark:')
 client.users.forEach(m =>{
 var bc = new
@@ -940,7 +908,7 @@ m.send({ embed: bc })
 
 
 client.on('message', message => {
-  var prefix = '#';
+  var prefix = 'F!';
   
   if (message.content.startsWith(prefix + "id")) {
   if(!message.channel.guild) return message.reply(`هذا الأمر فقط ل السيرفرات :x:`);
@@ -1041,7 +1009,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-  if(message.content === '#invite') {
+  if(message.content === 'F!invite') {
   const embed = new Discord.RichEmbed()
   .setTitle(':arrow_right: add FoxBot')
   .setURL('https://discordapp.com/oauth2/authorize?client_id=447751707003453460&scope=bot&permissions=8')
@@ -1085,7 +1053,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-  if(message.content === '#عقاب') {
+  if(message.content === 'F!عقاب') {
     if(!message.channel.guild) return message.reply('**هاذا الامر فقط للسيرفرات**');
     var edits = ['تضرب نفسك كف' , 'لا تتحرك ابد' , 'خلاص مسامحك' , 'ارمي حالك ببير' , 'روح دق على كل بيوت العماره']
     var embed = new Discord.RichEmbed()
