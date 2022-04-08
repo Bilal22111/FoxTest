@@ -16,7 +16,7 @@
       "resolved": "https://registry.npmjs.org/long/-/long-4.0.0.tgz",
       "version": "4.0.0"
     },
-    "moment": "^2.22.1",
+    "moment": "^2.29.2",
     "prism-media": {
       "integrity": "sha512-L6yc8P5NVG35ivzvfI7bcTYzqFV+K8gTfX9YaJbmIFfMXTs71RMnAupvTQPTCteGsiOy9QcNLkQyWjAafY/hCQ==",
       "resolved": "https://registry.npmjs.org/prism-media/-/prism-media-0.0.2.tgz",
